@@ -12,8 +12,7 @@ def generate_task_id():
     return dt
 
 
-# TASK_ID = generate_task_id()
-TASK_ID = '2024-09-12_01:57:43'
+TASK_ID = generate_task_id()
 
 import os
 import merge
