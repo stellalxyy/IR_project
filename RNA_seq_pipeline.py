@@ -6,11 +6,9 @@ Created by Stella Li on 2024/08/08 13:59
 
 import datetime
 
-
 def generate_task_id():
     dt = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
     return dt
-
 
 TASK_ID = generate_task_id()
 
@@ -129,11 +127,25 @@ class RNASeqPipeline:
     
     def single_pair_judgement(self):
         fastq_file_name_list = os.listdir(self.data_task_fastq_dir)
+        has_single = False
+        has_paired = False
+
         for f in fastq_file_name_list:
-            if not f.endswith('_1.fastq') or not f.endswith('_2.fastq'):
-                return 'single'
+            if f.endswith('_1.fastq'):
+                has_paired = True
+            elif f.endswith('_2.fastq'):
+                has_paired = True
             else:
-                return 'paired'
+                has_single = True
+
+        if has_single and has_paired:
+            return 'mixed'
+        elif has_single:
+            return 'single'
+        elif has_paired:
+            return 'paired'
+        else:
+            return 'none'
         
     def mapping(self, new_idx_list, form):
         logging.info(f"Task ID {TASK_ID}: Genome mapping")
