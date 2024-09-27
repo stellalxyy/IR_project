@@ -14,8 +14,12 @@ class Config:
         self.GENOME_DIR = '/root/genome_dir'
         self.GENOME_FASTA = '/root/data/original/genome/Homo/Homo_sapiens.GRCh38.dna.primary_assembly.fa'
         self.INTRON_GTF_FILE_PATH = '/root/data/original/genome/Homo/Homo_sapiens.GRCh38.107.intron.all.nd.id.gtf'
+<<<<<<< HEAD
         self.INTRON_GTF_FILE_HOST_PATH = '/data/youpu/Homo_sapiens.GRCh38.107.intron.all.nd.id.gtf'
         
+=======
+
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
         # software
         self.SAMTOOLS = '/usr/local/bin/samtools'
         self.STAR = '/root/data/youpu/software/STAR-2.7.11a/bin/Linux_x86_64/STAR'
@@ -24,7 +28,10 @@ class Config:
         self.TRANSDECODER_LONGORFS = '/root/software/TransDecoder-v5.7.1/TransDecoder.LongOrfs'
         self.TRANSDECODER_PREDICT = '/root/software/TransDecoder-v5.7.1/TransDecoder.Predict'
         self.MAXQUANT = '/root/software/MaxQuant_v_2.4.9.0/bin/MaxQuantCmd.exe'
+<<<<<<< HEAD
         self.FEATURECOUNTS = '/data/youpu/miniconda3/bin/featureCounts'
+=======
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
 
         # running dir
         self.BASE_DOCKER_DIR = '/root/data/youpu'
@@ -48,11 +55,17 @@ class Config:
         self.HOST_TEMP_TASK_SUBFOLDER = os.path.join(self.HOST_TEMP_SUBFOLDER, self.TASK_ID)
         self.HOST_OUTPUT_TASK_SUBFOLDER = os.path.join(self.HOST_OUTPUT_SUBFOLDER, self.TASK_ID)
         self.HOST_TEMP_TRANSCRIPTS_DIR = os.path.join(self.HOST_TEMP_TASK_SUBFOLDER, 'transcripts')
+<<<<<<< HEAD
         self.HOST_TEMP_SORTED_BAM_DIR = os.path.join(self.HOST_TEMP_TASK_SUBFOLDER, 'sorted_bam_files')
         self.HOST_TEMP_EXPRESSION_MATRIX = os.path.join(self.HOST_TEMP_TASK_SUBFOLDER, 'expression_matrix.csv')
         self.HOST_TEMP_GTF_GROUP_INFO = os.path.join(self.HOST_TEMP_TASK_SUBFOLDER, 'transcript_group_info.csv')
         self.HOST_OUTPUT_DIFFERENTIAL_ANALYSIS_DIR = os.path.join(self.HOST_OUTPUT_TASK_SUBFOLDER, 'differential_analysis')
         self.HOST_ALL_BAM_FILES_DIR = os.path.join(self.HOST_MAIN_FOLDER, 'all_bam_files')
+=======
+        self.HOST_TEMP_EXPRESSION_MATRIX = os.path.join(self.HOST_TEMP_TASK_SUBFOLDER, 'expression_matrix.csv')
+        self.HOST_TEMP_GTF_GROUP_INFO = os.path.join(self.HOST_TEMP_TASK_SUBFOLDER, 'transcript_group_info.csv')
+        self.HOST_OUTPUT_DIFFERENTIAL_ANALYSIS_DIR = os.path.join(self.HOST_OUTPUT_TASK_SUBFOLDER, 'differential_analysis')
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
         
         # self.TEMP_IR_DIR = os.path.join(self.BASE_DOCKER_DIR, self.TASK_ID)
         self.TEMP_BAM_STORAGE_DIR = os.path.join(self.DOCKER_MAIN_FOLDER, 'all_bam_files')

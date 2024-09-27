@@ -6,7 +6,10 @@ Created by Stella Li on 2024/08/08 13:59
 
 import datetime
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
 def generate_task_id():
     dt = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
     return dt
@@ -32,7 +35,10 @@ from XML_processor import XMLProcessor
 from construct_group_info_matrix import ConstructGroupInfoMatrix
 from construct_expression_matrix import ConstructExpressionMatrix
 from running_differential_analysis import RunningDifferentialAnalysis
+<<<<<<< HEAD
 from running_deseq2_differential_analysis import RunningDeseq2Analysis
+=======
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -61,7 +67,10 @@ class RNASeqPipeline:
         self.data_task_raw_group_info = os.path.join(self.data_task_group_info_dir, 'raw_groups.csv')
         self.temp_task_fasta_dir = os.path.join(self.temp_task_dir, 'fasta')
         self.temp_task_mapping_dir = os.path.join(self.temp_task_dir, 'mapping')
+<<<<<<< HEAD
         self.temp_task_sorted_bam_dir = os.path.join(self.temp_task_dir, 'sorted_bam_files')
+=======
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
         self.bam_file_storage = os.path.join(self.main_dir, 'all_bam_files')
         self.docker_fastq_dir = '/root' + self.data_task_fastq_dir
 
@@ -226,6 +235,7 @@ class RNASeqPipeline:
                                                        self.temp_task_dir)
         matrix_constructor.main()
 
+<<<<<<< HEAD
         logging.info("Start running limma differential analysis...")
         analysis = RunningDifferentialAnalysis()
         analysis.run()
@@ -233,6 +243,11 @@ class RNASeqPipeline:
         logging.info("Start running deseq2 differential analysis...")
         deseq_analysis = RunningDeseq2Analysis()
         deseq_analysis.main()
+=======
+        logging.info("Start running differential analysis...")
+        analysis = RunningDifferentialAnalysis()
+        analysis.run()
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
 
         logging.info(f"Task ID {TASK_ID}: Finish differential analysis")
 
@@ -273,7 +288,10 @@ class RNASeqPipeline:
         os.makedirs(Path(self.data_task_fastq_dir), exist_ok=True)
         os.makedirs(Path(self.data_task_raw_files_dir), exist_ok=True)
         os.makedirs(Path(self.data_task_group_info_dir), exist_ok=True)
+<<<<<<< HEAD
         os.makedirs(Path(self.temp_task_sorted_bam_dir), exist_ok=True)
+=======
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
         
         logging.info(f'Copying fastq files to data folder...')
         self._copy(self.fastaq_dir, '.fastq', 'fastq')
@@ -305,7 +323,10 @@ class RNASeqPipeline:
         
         logging.info('Start judging single-end mapping or paired-end mapping...')
         form = self.single_pair_judgement()
+<<<<<<< HEAD
         logging.info(f'FORM: {form}')
+=======
+>>>>>>> bae26d59e0001bb8e105435af2afeeef35f4a2de
         
         logging.info('Start genome mapping...')
         if len(new_idx_list) != 0:
